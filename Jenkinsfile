@@ -13,6 +13,13 @@ pipeline {
                 echo "${TAG}"
             }
         }
+         stage ('Docker Build'){
+            steps {
+                script {
+                    docker.build("nethrashreec/myapp:${TAG}")
+                }
+            }
+        }
        
         
     }
