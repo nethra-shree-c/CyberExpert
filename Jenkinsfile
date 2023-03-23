@@ -13,13 +13,16 @@ pipeline {
                 echo "${TAG}"
             }
         }
-         stage ('Docker Build'){
-            steps {
-                script {
-                    docker.build("nethrashreec/myapp:${TAG}")
-                }
-            }
+         stage('Build and Push Image') {
+      steps {
+        script {
+          def dockerImage = docker.build("mydockerhubaccount/myapp:${env.BUILD_ID}")
+          docker.withRegistry('https://registry.hub.docker.com', 'dockerhub-creds') {
+            dockerImage.push()
+          }
         }
+      }
+    }
        
         
     }
