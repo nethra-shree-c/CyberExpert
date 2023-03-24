@@ -17,7 +17,7 @@ pipeline {
       steps {
         script {
           def dockerImage = docker.build("nethrashreec/myapp:${env.BUILD_ID}"
-          docker.withRegistry('https://hub.docker.com/', 'dockerhubid') {
+          docker.withRegistry('https://registry.hub.docker.com', 'dockerhubid') {
           docker.image("nethrashreec/myapp1:${TAG}").push("latest")
           }
         }
