@@ -16,10 +16,9 @@ pipeline {
          stage('Build and Push Image') {
       steps {
         script {
-          def dockerImage = docker.build("mydockerhubaccount/myapp:${env.BUILD_ID}")
-            sh 'docker build -t mydockerhubaccount/myapp:${TAG} .'
+          def dockerImage = docker.build("nethrashreec/myapp:${env.BUILD_ID}"
           docker.withRegistry('https://hub.docker.com/', 'dockerhubid') {
-            dockerImage.push()
+          docker.image("nethrashreec/myapp1:${TAG}").push("latest")
           }
         }
       }
