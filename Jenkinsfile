@@ -17,7 +17,7 @@ pipeline {
       steps {
         script {
           def dockerImage = docker.build("mydockerhubaccount/myapp:${env.BUILD_ID}")
-          docker.withRegistry('https://registry.hub.docker.com', 'dockerhub-creds') {
+          docker.withRegistry('https://hub.docker.com/', 'dockerhubid') {
             dockerImage.push()
           }
         }
