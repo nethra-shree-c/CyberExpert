@@ -1,44 +1,15 @@
-apiVersion: apps/v1
-
-kind: Deployment
-
+apiVersion: v1
+kind: Pod
 metadata:
-
-  name: cyberexpert-deployment
-
-  labels:
-
-    app: cyberexpert
-
+   name: nodeapp
+   labels:
+     app: nodeapp
 spec:
-
-  replicas: 1
-
-  selector:
-
-    matchLabels:
-
-      app: cyberexpert
-
-  template:
-
-    metadata:
-
-      labels:
-
-        app: cyberexpert
-
-    spec:
-
-      containers:
-
-      - name: cyberexpert-server
-
-        image: nethrashreec/myapp1
-
-        ports:
-
-        - containerPort: 80
+   containers:
+   - name: nodeapp
+     image: nethrashreec/myapp1:v1
+     ports:
+     - containerPort: 8080
 
 
 
