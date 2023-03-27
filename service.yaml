@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: cyberexpert-service
+  name: cyberexpert-service
 spec:
-  selector:
-    app: cyberexpert
-  ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 8000
-  type: LoadBalance
+  selector:
+    app: cyberexpert
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8000
+  type: LoadBalancer
