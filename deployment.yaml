@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: cyberexpert
-        image: nethrashreec/myapp1 :latest
+        image: nethrashreec/myapp1:latest
         ports:
         - containerPort: 8000
