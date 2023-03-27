@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: cyberexpert
+  name: cyberexpert
   labels:
     app: cyberexpert
 spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: cyberexpert
-  template:
-    metadata:
-      labels:
-        app: cyberexpert
-    spec:
-      containers:
-      - name: cyberexpertserver
-        image: nethrashreec/myapp1:latest
-        ports:
-        - containerPort: 8000
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cyberexpert
+  template:
+    metadata:
+      labels:
+        app: cyberexpert
+    spec:
+      containers:
+      - name: cyberexpertserver
+        image: nethrashreec/myapp1:latest
+        ports:
+        - containerPort: 8000
