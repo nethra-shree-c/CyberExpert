@@ -15,7 +15,7 @@ spec:
         app: cyberexpert
     spec:
       containers:
-      - name: cyberexpert
+      - name: cyberexpertserver
         image: nethrashreec/myapp1:latest
         ports:
         - containerPort: 8000
