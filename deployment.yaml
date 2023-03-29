@@ -21,18 +21,7 @@ spec:
         - containerPort: 80
        
  
-apiVersion: v1
-kind: Pod
-metadata: 
-  name: cyberexpert
-  labels:
-    app: cyberexpert
-spec:
-  containers:
-  - name: cyberexpert
-  image: nethrashreec/myapp3:v1
-  ports:
-  - containerPort: 8080
+
 
 
 
